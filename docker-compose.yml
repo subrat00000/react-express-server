@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: task_server_password
+      MYSQL_DATABASE: mydb
+    networks:
+      - app-tier
+    ports:
+      - "3306:3306"
+ 
+networks:
+  app-tier:
+    driver: bridge
